@@ -46,6 +46,8 @@ public:
 	 bool operator <(const Fraction&) const; // Less Than
 	 bool operator <=(const Fraction&) const; // Less Than or Equal To
 	 bool operator >=(const Fraction&) const; // Greater Than or Equal To
+	 bool operator >>(const Fraction&) const; // Stream Insertion Operator
+	 bool operator/(const Fraction&) const; // Division
 
 private:
 	int nominator;
