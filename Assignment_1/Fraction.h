@@ -49,6 +49,9 @@ public:
 	 bool operator >>(const Fraction&) const; // Stream Insertion Operator
 	 bool operator/(const Fraction&) const; // Division
 
+	 // Friend Functions
+	 friend bool operator+(const Fraction&) const;
+
 private:
 	int nominator;
 	int denominator;
