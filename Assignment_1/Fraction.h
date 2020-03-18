@@ -31,6 +31,10 @@
 *  NBCC Academic Integrity Policy (policy 1111)
 */
 
+// C++ Standard Library Pre Processor
+#include <iostream>
+
+
 class Fraction
 {
 public:
@@ -50,7 +54,13 @@ public:
 	 bool operator/(const Fraction&) const; // Division
 
 	 // Friend Functions
-	 friend bool operator+(const Fraction&) const;
+	 friend bool operator+(const Fraction&);
+	 friend bool operator-(const Fraction&);
+	 friend bool operator*(const Fraction&);
+	 friend bool operator<(const Fraction&);
+	 friend std::ostream operator <<(const Fraction&);
+	 friend std::istream operator >>(const Fraction&);
+
 
 private:
 	int nominator;

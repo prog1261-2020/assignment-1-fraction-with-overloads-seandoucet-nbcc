@@ -36,7 +36,13 @@
 // C++ Standard Library Pre Processor
 
 Fraction::Fraction(int n, int d) : nominator(n), denominator(d) {
-
+	if ((n = 0) || (d = 0)) {
+		n++; d++;
+	}
+	else if ((n < 0) || (d < 0)) {
+		n = 1;
+		d = 1;
+		}
 }
 
 // Fraction Operator Plus
