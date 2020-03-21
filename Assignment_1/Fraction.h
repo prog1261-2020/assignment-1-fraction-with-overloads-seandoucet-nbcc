@@ -33,33 +33,38 @@
 
 // C++ Standard Library Pre Processor
 #include <iostream>
+#include <cstdlib>
 
 
 class Fraction
 {
 public:
 	Fraction(int n, int d);
+	Fraction(int n);
 
 	// All Operator Overloading Posibilities
-	 bool operator +(const Fraction&) const; // Plus Operator
-	 bool operator -(const Fraction&) const; // Minus Operator
-	 bool operator *(const Fraction&) const; // Multiplication Operator
-	 bool operator ==(const Fraction&) const; // Equals Operator
-	 bool operator !=(const Fraction&) const; // Not Equal Operator
-	 bool operator >(const Fraction&) const; // Greater Than
-	 bool operator <(const Fraction&) const; // Less Than
-	 bool operator <=(const Fraction&) const; // Less Than or Equal To
-	 bool operator >=(const Fraction&) const; // Greater Than or Equal To
-	 bool operator >>(const Fraction&) const; // Stream Insertion Operator
-	 bool operator/(const Fraction&) const; // Division
+	 bool operator +(const Fraction& left) const; // Plus Operator
+	 bool operator -(const Fraction& left) const; // Minus Operator
+	 bool operator *(const Fraction& left) const; // Multiplication Operator
+	 bool operator *=(const Fraction& left) const; // Multiplication Operator
+	 bool operator ==(const Fraction& left) const; // Equals Operator
+	 bool operator !=(const Fraction& left) const; // Not Equal Operator
+	 bool operator +=(const Fraction& left) const; // Increment
+	 bool operator -=(const Fraction& left) const; // Decrement
+	 bool operator >(const Fraction& left) const; // Greater Than
+	 bool operator <(const Fraction& left) const; // Less Than
+	 bool operator <=(const Fraction& left) const; // Less Than or Equal To
+	 bool operator >=(const Fraction& left) const; // Greater Than or Equal To
+	 bool operator >>(const Fraction& left) const; // Stream Insertion Operator
+	 bool operator/(const Fraction& left) const; // Division
 
 	 // Friend Functions
-	 friend bool operator+(const Fraction&);
-	 friend bool operator-(const Fraction&);
-	 friend bool operator*(const Fraction&);
-	 friend bool operator<(const Fraction&);
-	 friend std::ostream operator <<(const Fraction&);
-	 friend std::istream operator >>(const Fraction&);
+	 friend bool operator+(const Fraction& left);
+	 friend bool operator-(const Fraction& left);
+	 friend bool operator*(const Fraction& left);
+	 friend std::ostream& operator<<(std::ostream stream, const Fraction& right);
+	 friend std::istream& operator>>(std::ostream stream, const Fraction& right);
+
 
 
 private:

@@ -45,61 +45,106 @@ Fraction::Fraction(int n, int d) : nominator(n), denominator(d) {
 		}
 }
 
+Fraction::Fraction(int n) : nominator(n) {
+	if (n = 0) {
+		n++;
+	}
+	else if (n < 0) {
+		n = 1;
+	}
+}
+
 // Fraction Operator Plus
-bool Fraction::operator+(const Fraction&) const{
+bool Fraction::operator+(const Fraction& left) const{
 	return true;
 }
 
 // Fraction Operator Minus
-bool Fraction::operator-(const Fraction&) const{
+bool Fraction::operator-(const Fraction& left) const{
 	return true;
 }
 
 // Fraction Operator Multiplication
-bool Fraction::operator*(const Fraction&) const{
+bool Fraction::operator*(const Fraction& left) const{
 	return true;
 }
 
+bool Fraction::operator*=(const Fraction& left) const {
+	return false;
+}
+
 // Fraction Operator Equal
-bool Fraction::operator==(const Fraction&) const{
+bool Fraction::operator==(const Fraction& left) const{
 	return true;
 }
 
 // Fraction Operator Not Equal
-bool Fraction::operator!=(const Fraction&) const{
+bool Fraction::operator!=(const Fraction& left) const{
 	return true;
 }
 
+// Fraction Operator Increment
+bool Fraction::operator+=(const Fraction& left) const
+{
+	return false;
+}
+
+// Fraction Operator Decrement
+bool Fraction::operator-=(const Fraction& left) const
+{
+	return false;
+}
+
 // Fraction Operator Greater Than
-bool Fraction::operator>(const Fraction&) const{
+bool Fraction::operator>(const Fraction& left) const{
 	return true;
 }
 
 // Fraction Operator Less Than
-bool Fraction::operator<(const Fraction&) const{
+bool Fraction::operator<(const Fraction& left) const{
 	return true;
 }
 
 // Fraction Operator Less Than Or Equal
-bool Fraction::operator<=(const Fraction&) const{
+bool Fraction::operator<=(const Fraction& left) const{
 	return true;
 }
 
 // Fraction Operator Greater Than Or Equal
-bool Fraction::operator>=(const Fraction&) const{
+bool Fraction::operator>=(const Fraction& left) const{
 	return true;
 }
 
 // Fraction Operator Stream Insertion Operator
-bool Fraction::operator>>(const Fraction&) const{
+bool Fraction::operator>>(const Fraction& left) const{
 	return true;
+}
+
+bool Fraction::operator/(const Fraction& left) const {
+	return false;
 }
 
 // Fraction Operator Division
-bool Fraction::operator\(const Fraction&) const {
+bool Fraction::operator/(const Fraction& left) const {
 	return true;
 }
 
+bool operator+(const Fraction& left) {
+	return false;
+}
 
+bool operator-(const Fraction& left) {
+	return false;
+}
 
+bool operator*(const Fraction& left) {
+	return false;
+}
 
+std::ostream& operator<<(std::ostream stream, const Fraction& right) {
+	// TODO: insert return statement here
+}
+
+std::istream& operator>>(std::ostream stream, const Fraction& right) {
+	// TODO: insert return statement here
+}
