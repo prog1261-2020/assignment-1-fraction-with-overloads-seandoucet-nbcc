@@ -41,13 +41,15 @@ class Fraction
 public:
 	Fraction(int n, int d);
 	Fraction(int n);
+	Fraction();
 
 	// All Operator Overloading Posibilities
-	 bool operator +(const Fraction& left) const; // Plus Operator
-	 bool operator -(const Fraction& left) const; // Minus Operator
-	 bool operator *(const Fraction& left) const; // Multiplication Operator
+	 Fraction operator +(const Fraction& left) const; // Plus Operator
+	 Fraction operator -(const Fraction& left) const; // Minus Operator
+	 Fraction operator *(const Fraction& left) const; // Multiplication Operator
 	 bool operator *=(const Fraction& left) const; // Multiplication Operator
 	 bool operator ==(const Fraction& left) const; // Equals Operator
+	 bool operator /=(const Fraction& left) const; // Division Equals Operator
 	 bool operator !=(const Fraction& left) const; // Not Equal Operator
 	 bool operator +=(const Fraction& left) const; // Increment
 	 bool operator -=(const Fraction& left) const; // Decrement
@@ -55,15 +57,17 @@ public:
 	 bool operator <(const Fraction& left) const; // Less Than
 	 bool operator <=(const Fraction& left) const; // Less Than or Equal To
 	 bool operator >=(const Fraction& left) const; // Greater Than or Equal To
-	 bool operator >>(const Fraction& left) const; // Stream Insertion Operator
-	 bool operator/(const Fraction& left) const; // Division
+	 Fraction operator/(const Fraction& left) const; // Division 
 
 	 // Friend Functions
-	 friend bool operator+(const Fraction& left);
-	 friend bool operator-(const Fraction& left);
-	 friend bool operator*(const Fraction& left);
+	 friend Fraction operator+(const Fraction& left, const Fraction& right);
+	 friend Fraction operator-(const Fraction& left, const Fraction& right);
+	 friend Fraction operator*(const Fraction& left, const Fraction& right);
+	 friend Fraction operator>(const Fraction& left, const Fraction& right);
+	 friend Fraction operator<(const Fraction& left, const Fraction& right);
+	 friend Fraction operator/(const Fraction& left, const Fraction& right);
 	 friend std::ostream& operator<<(std::ostream stream, const Fraction& right);
-	 friend std::istream& operator>>(std::ostream stream, const Fraction& right);
+	 friend std::istream& operator>>(std::istream stream, const Fraction& right);
 
 
 
