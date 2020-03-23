@@ -72,16 +72,6 @@ bool Fraction::operator!=(const Fraction& left) const
 	return false;
 }
 
-bool Fraction::operator>=(const Fraction& left) const
-{
-	return false;
-}
-
-bool Fraction::operator<=(const Fraction& left) const
-{
-	return false;
-}
-
 Fraction operator+(const Fraction& left, const Fraction& right)
 {
 	return Fraction();
@@ -141,14 +131,14 @@ bool operator<(const Fraction& left, const Fraction& right)
 	return false;
 }
 
-Fraction operator>=(const Fraction& left, const Fraction& right)
+bool operator>=(const Fraction& left, const Fraction& right)
 {
-	return Fraction();
+	return true;
 }
 
-Fraction operator<=(const Fraction& left, const Fraction& right)
+bool operator<=(const Fraction& left, const Fraction& right)
 {
-	return Fraction();
+	return true;
 }
 
 bool operator!(const Fraction& left)
@@ -156,12 +146,12 @@ bool operator!(const Fraction& left)
 	return false;
 }
 
-std::ostream& operator<<(std::stringstream stream, const Fraction& right)
+std::ostream& operator<<(std::ostream& stream, const Fraction& right)
 {
 	return stream;
 }
 
-std::istream& operator>>(std::istringstream stream, const Fraction& right)
+std::istream& operator>>(std::istream& stream, const Fraction& right)
 {
 	return stream;
 }

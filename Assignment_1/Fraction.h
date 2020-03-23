@@ -50,8 +50,6 @@ public:
 	 // Bool Operator Posibilities 
 	 bool operator ==(const Fraction& left) const;
 	 bool operator !=(const Fraction& left) const;
-	 bool operator >=(const Fraction& left) const;
-	 bool operator <=(const Fraction& left) const;
 
 
 	 // Friend Functions
@@ -66,12 +64,12 @@ public:
 	 friend bool operator >(const Fraction& left, const int right);
 	 friend bool operator <(const Fraction& left, const Fraction& right);
 	 friend bool operator >(const Fraction& left, const Fraction& right);
-	 friend Fraction operator >=(const Fraction& left, const Fraction& right);
-	 friend Fraction operator <=(const Fraction& left, const Fraction& right);
+	 friend bool operator >=(const Fraction& left, const Fraction& right);
+	 friend bool operator <=(const Fraction& left, const Fraction& right);
 	 friend bool operator!(const Fraction& left);
 	 
-	 friend std::ostream& operator<<(std::stringstream stream, const Fraction& right);
-	 friend std::istream& operator>>(std::istringstream stream, const Fraction& right);
+	 friend std::ostream& operator<<(std::ostream& stream, const Fraction& right);
+	 friend std::istream& operator>>(std::istream& stream, const Fraction& right);
 
 
 
