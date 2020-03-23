@@ -33,6 +33,7 @@
 
 // C++ Standard Library Pre Processor
 #include <iostream>
+#include <sstream>
 #include <cstdlib>
 
 
@@ -44,30 +45,33 @@ public:
 	Fraction();
 
 	// All Operator Overloading Posibilities
-	 Fraction operator +(const Fraction& left) const; // Plus Operator
-	 Fraction operator -(const Fraction& left) const; // Minus Operator
-	 Fraction operator *(const Fraction& left) const; // Multiplication Operator
-	 bool operator *=(const Fraction& left) const; // Multiplication Operator
-	 bool operator ==(const Fraction& left) const; // Equals Operator
-	 bool operator /=(const Fraction& left) const; // Division Equals Operator
-	 bool operator !=(const Fraction& left) const; // Not Equal Operator
-	 bool operator +=(const Fraction& left) const; // Increment
-	 bool operator -=(const Fraction& left) const; // Decrement
-	 bool operator >(const Fraction& left) const; // Greater Than
-	 bool operator <(const Fraction& left) const; // Less Than
-	 bool operator <=(const Fraction& left) const; // Less Than or Equal To
-	 bool operator >=(const Fraction& left) const; // Greater Than or Equal To
-	 Fraction operator/(const Fraction& left) const; // Division 
+	 Fraction& operator *=(const Fraction& left) const;
+
+	 // Bool Operator Posibilities 
+	 bool operator ==(const Fraction& left) const;
+	 bool operator !=(const Fraction& left) const;
+	 bool operator >=(const Fraction& left) const;
+	 bool operator <=(const Fraction& left) const;
+
 
 	 // Friend Functions
-	 friend Fraction operator+(const Fraction& left, const Fraction& right);
-	 friend Fraction operator-(const Fraction& left, const Fraction& right);
-	 friend Fraction operator*(const Fraction& left, const Fraction& right);
-	 friend Fraction operator>(const Fraction& left, const Fraction& right);
-	 friend Fraction operator<(const Fraction& left, const Fraction& right);
-	 friend Fraction operator/(const Fraction& left, const Fraction& right);
-	 friend std::ostream& operator<<(std::ostream stream, const Fraction& right);
-	 friend std::istream& operator>>(std::istream stream, const Fraction& right);
+	 friend Fraction operator +(const Fraction& left, const Fraction& right);
+	 friend Fraction operator -(const Fraction& left, const Fraction& right);
+	 friend Fraction operator *(const Fraction& left, const Fraction& right);
+	 friend Fraction operator /(const Fraction& left, const Fraction& right);
+	 friend Fraction operator -=(const Fraction& left, const Fraction& right);
+	 friend Fraction operator +=(const Fraction& left, const Fraction& right);
+	 friend Fraction operator /=(const Fraction& left, const Fraction& right);
+	 friend bool operator >(const int left, const Fraction& right);
+	 friend bool operator >(const Fraction& left, const int right);
+	 friend bool operator <(const Fraction& left, const Fraction& right);
+	 friend bool operator >(const Fraction& left, const Fraction& right);
+	 friend Fraction operator >=(const Fraction& left, const Fraction& right);
+	 friend Fraction operator <=(const Fraction& left, const Fraction& right);
+	 friend bool operator!(const Fraction& left);
+	 
+	 friend std::ostream& operator<<(std::stringstream stream, const Fraction& right);
+	 friend std::istream& operator>>(std::istringstream stream, const Fraction& right);
 
 
 
