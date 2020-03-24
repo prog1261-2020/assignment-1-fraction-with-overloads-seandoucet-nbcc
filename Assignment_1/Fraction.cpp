@@ -59,7 +59,8 @@ Fraction::Fraction() {}
 
 Fraction& Fraction::operator*=(const Fraction& left) const
 {
-	return Fraction();
+	Fraction temp = left;
+	return temp;
 }
 
 bool Fraction::operator==(const Fraction& left) const
